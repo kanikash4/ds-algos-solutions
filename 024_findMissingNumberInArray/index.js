@@ -1,6 +1,7 @@
 
 /**
- * Find the missing number in arrayof numbers 1 to 100.
+ * Find the missing number in array of numbers 1 to 100.
+ * Array can be unsorted
  * E.g. : Input:  missingNumber([3,4,5,7,8,1,2,6])
  * Outpot: 9
 
