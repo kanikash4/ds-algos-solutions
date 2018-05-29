@@ -1,5 +1,16 @@
 "use strict";
-
+var head = {
+  name : 'I',
+  next : {
+    name : 'AM',
+    next : {
+      name : 'KANIKA',
+      next : {
+        name : 'SHARMA'
+      }
+    }
+  }
+};
 function detectLoop(head) {
 	var slow, fast;
 	if(!head || head == null || !head.next) {
@@ -16,3 +27,5 @@ function detectLoop(head) {
 		}
 	}	
 }
+
+detectLoop(head)
