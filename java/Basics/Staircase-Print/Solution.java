@@ -1,0 +1,34 @@
+/**
+ * Write a program that prints a staircase of size n and it should be right aligned.
+ *              #
+ *             ##
+ *            ###
+ */
+
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    static void staircase(int n) {
+        int spaceCnt = 0;
+        for (int i = 0; i < n; i++) {
+            spaceCnt = n - (i + 1);
+            System.out.print(new String(new char[spaceCnt]).replace("\0", " ") + new String(new char[n - spaceCnt]).replace("\0", "#") + "\n");
+        }
+    }
+
+    private static final Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        int n = scanner.nextInt();
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+        staircase(n);
+        scanner.close();
+    }
+}
