@@ -1,73 +1,81 @@
-/**
- * Use the  operator to perform the following operations: 
- * Print the sum of  plus your int variable on a new line.
- * Print the sum of  plus your double variable to a scale of one decimal place on a new line.
- * Concatenate  with the string you read as input and print the result on a new line.
- *
- * Input Format
- *
- * The first line contains an integer that you must sum with . 
- * The second line contains a double that you must sum with . 
- * The third line contains a string that you must concatenate with .
- *
- * Output Format
- * 
- * Print the sum of both integers on the first line, the sum of both doubles (scaled to  decimal place) on the second line, and then the two concatenated strings on the third line.
- *
- * Sample Input: 
- *
- * 12
- * 4.0
- * is the best place to learn and practice coding! 
- * 
- * Sample Output: 
- * 
- * 16
- * 8.0
- * HackerRank is the best place to learn and practice coding!
- * 
- * Explanation:  
- * When we sum the integers 4 and 12, we get the integer 16.
- * When we sum the floating-point numbers 4.0 and 4.0, we get 8.0. 
- * When we concatenate HackerRank with is the best place to learn and practice coding!, we get HackerRank is the best place to learn and practice coding!. 
- *
- */
+/*
+Objective 
+In this challenge, you'll work with arithmetic operators. Check out the Tutorial tab for learning materials and an instructional video!
 
+Task 
+Given the meal price (base cost of a meal), tip percent (the percentage of the meal price being added as tip), and tax percent (the percentage of the meal price being added as tax) for a meal, find and print the meal's total cost.
+
+Note: Be sure to use precise values for your calculations, or you may end up with an incorrectly rounded result!
+
+Input Format
+
+There are  lines of numeric input: 
+The first line has a double, meal_cost (the cost of the meal before tax and tip). 
+The second line has an integer, tip_percent (the percentage of  being added as tip). 
+The third line has an integer,  tax_percent(the percentage of  being added as tax).
+
+Output Format
+
+Print The total meal cost is totalCost dollars., where  is the rounded integer result of the entire bill ( with added tax and tip).
+
+Sample Input
+
+12.00
+20
+8
+Sample Output
+
+The total meal cost is 15 dollars.
+Explanation
+
+Given: 
+meal_cost,  tip_percent,  tax_percent
+
+Calculations: 
+ 
+ 
+ 
+
+We round totalcost to the nearest dollar (integer) and then print our result:
+
+The total meal cost is 15 dollars.
+*/
 
 import java.io.*;
-import java.util.*;
-import java.text.*;
 import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
 import java.util.regex.*;
 
 public class Solution {
-	
+
+    // Complete the solve function below.
+    static void solve(double meal_cost, int tip_percent, int tax_percent) {
+        
+         int totalCost = (int) Math.round(meal_cost + meal_cost * tip_percent / 100.0 + 
+                          meal_cost * tax_percent / 100.0);
+         /* Print output */
+        System.out.println("The total meal cost is " + totalCost + " dollars.");
+        
+
+    }
+
+    private static final Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
-        int i = 4;
-        double d = 4.0;
-        String s = "HackerRank ";
-		
-        Scanner scan = new Scanner(System.in);
+        double meal_cost = scanner.nextDouble();
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
-        /* Declare second integer, double, and String variables. */
-        int ii;
-        double dd;
-        String ss = "";
+        int tip_percent = scanner.nextInt();
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
-        /* Read and save an integer, double, and String to your variables.*/
-        // Note: If you have trouble reading the entire String, please go back and review the Tutorial closely.
-        ii = scan.nextInt();
-        dd = scan.nextDouble();
-        scan.nextLine(); // to get rid of newline at end of line 2 of input
-        ss = scan.nextLine(); 
+        int tax_percent = scanner.nextInt();
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
-        /* Print the sum of both integer variables on a new line. */
-        System.out.println(i + ii);
-        /* Print the sum of the double variables on a new line. */
-		System.out.println(d + dd);
-        /* Concatenate and print the String variables on a new line; 
-        	the 's' variable above should be printed first. */
-        System.out.println(s+ss);
-       scan.close();
+        solve(meal_cost, tip_percent, tax_percent);
+
+        scanner.close();
     }
 }
