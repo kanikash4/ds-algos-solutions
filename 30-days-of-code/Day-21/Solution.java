@@ -63,3 +63,26 @@ public class Generics {
         }
     } 
 }
+
+
+/*
+
+
+Input (stdin)
+3
+1
+2
+
+
+Your Output (stdout)
+1
+2
+3
+
+
+Expected Output
+1
+2
+3
+
+*/
